@@ -156,7 +156,7 @@ def jarvis(data):
                     if person2 in info_dict['Hotmail']:
                         speak(info_dict['Hotmail'[person2]])
                         print(info_dict['Hotmail'[person2]])
-                if "Hotmail" in hg:
+                if "Gmail" in hg:
                     speak("Who would you like to know this info about?")
                     person2 = recordAudio()
                     print(person2)
