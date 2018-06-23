@@ -24,12 +24,8 @@ def recordAudio():
     r = sr.Recognizer()
     with sr.Microphone() as source:
         audio = r.listen(source)
-
-        # Speech recognition using Google Speech Recognition
         data = ""
         try:
-            # Uses the default API key
-            # To use another API key: `r.recognize_google(audio, key="GOOGLE_SPEECH_RECOGNITION_API_KEY")`
             data = r.recognize_google(audio)
         except sr.UnknownValueError:
             print()
@@ -159,6 +155,14 @@ def jarvis(data):
                     print(person2)
                     if person2 in info_dict['Hotmail']:
                         speak(info_dict['Hotmail'[person2]])
+                        print(info_dict['Hotmail'[person2]])
+                if "Hotmail" in hg:
+                    speak("Who would you like to know this info about?")
+                    person2 = recordAudio()
+                    print(person2)
+                    if person2 in info_dict['Gmail']:
+                        speak(info_dict['Gmail'[person2]])
+                        print(info_dict['Gmail'[person2]])
 
             elif "telephone" in rec:
                 speak("Who would you like to know this info about?")
